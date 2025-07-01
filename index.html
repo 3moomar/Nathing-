@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>متجر بيع المنتجات</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>متجر الإلكتروني</h1>
+  <div class="products-container" id="productsContainer"></div>
+
+  <script src="products.js"></script>
+  <script>
+    // رسم المنتجات على الصفحة
+    const container = document.getElementById('productsContainer');
+    products.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.className = 'product-card';
+      productDiv.innerHTML = `
+        <img src="${product.image}" alt="${product.name}">
+        <h3>${product.name}</h3>
+        <p>${product.price} ريال</p>
+        <button onclick="addToCart('${product.id}')">إضافة للسلة</button>
+      `;
+      container.appendChild(productDiv);
+    });
+
+    function addToCart(id) {
+      alert("تمت إضافة المنتج " + id + " للسلة");
+    }
+  </script>
+</body>
+</html>
