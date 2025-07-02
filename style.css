@@ -48,3 +48,34 @@ button {
 .dark-mode button {
   background-color: #ff9800;
 }
+/* أنماط خاصة بالجوال */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .products-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 90%;
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .cart-container {
+    width: 100%;
+  }
+}
